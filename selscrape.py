@@ -9,10 +9,5 @@ main_data = driver.find_element_by_xpath("/html/body/section/div/div[5]/div[5]/d
 
 for each in main_data.find_elements_by_xpath(".//tr"):
     print(each.find_elements_by_xpath(".//*[@class='number']")[1].get_attribute('innerHTML'))
-
-'''table = driver.find_element_by_xpath("//table[@class='topic-list ember-view']")
-
-for item in table.find_elements_by_xpath(".//tr"):
-    print([td.text for td in item.find_elements_by_xpath(".//td[@class='num'][1]")'''
     
 driver.close()
