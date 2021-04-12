@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+#from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Chrome('/Users/jeff/Desktop/scrapin_stuffs/chromedriver')
 driver.get('https://meta.discourse.org/')
