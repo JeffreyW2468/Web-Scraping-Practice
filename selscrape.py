@@ -4,9 +4,15 @@ from selenium.webdriver.common.keys import Keys
 driver = webdriver.Chrome('/Users/jeff/Desktop/scrapin_stuffs/chromedriver')
 driver.get('https://meta.discourse.org/')
 print(driver.title)
-search_bar = driver.find_element_by_id("search-term")
-search_bar.clear()
-search_bar.send_keys("error")
-search_bar.send_keys(Keys.RETURN)
-print(driver.current_url)
+main_data = driver.find_element_by_xpath("/html/body/section/div/div[5]/div[5]/div[2]/div/div/div/table/tbody")
+#print(main_data.get_attribute('innerHTML'))
+
+for each in main_data.find_elements_by_xpath(".//tr"):
+    print(each.find_elements_by_xpath(".//*[@class='number']")[1].get_attribute('innerHTML'))
+
+'''table = driver.find_element_by_xpath("//table[@class='topic-list ember-view']")
+
+for item in table.find_elements_by_xpath(".//tr"):
+    print([td.text for td in item.find_elements_by_xpath(".//td[@class='num'][1]")'''
+    
 driver.close()
